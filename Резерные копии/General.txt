@@ -1,0 +1,153 @@
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace GosNumber.Tests
+{
+    [TestClass]
+    public class General
+    {
+        static string nomer = "М111НР";
+        
+
+        [TestMethod]
+        public void First_test()
+        {
+            bool result = true;
+            string first = nomer.Substring(0, 1);
+
+            foreach (char d in first)
+            {
+                if (!Char.IsLetter(d))
+                    result = false;
+            }
+            bool expected = true;
+            Nomer c = new Nomer();
+            bool actual = c.First(result);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Second_test()
+        {
+            bool result = true;
+            string second = nomer.Substring(1, 3);
+
+            foreach (char d in second)
+            {
+                if (!Char.IsDigit(d))
+                    result = false;
+            }
+            Nomer c = new Nomer();
+            bool expected = true;
+            bool actual = c.Second(result);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Third_test()
+        {
+            bool result = true;
+            string third = nomer.Substring(4, 2);
+
+            foreach (char d in third)
+            {
+                if (!Char.IsLetter(d))
+                    result = false;
+            }
+            Nomer c = new Nomer();
+            bool expected = true;
+            bool actual = c.Third(result);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Amount()
+        {
+            bool result = true;
+            int length = nomer.Length;
+            if (length != 6)
+            {
+                result = false;
+            }
+            Nomer c = new Nomer();
+            bool expected = true;
+            bool actual = c.Fourth(result);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Amount_Letters()
+        {
+            bool result = true;
+            int counter = 0;
+            foreach (char d in nomer)
+            {
+                if (Char.IsLetter(d))
+                    counter++;
+            }
+
+            if (counter != 3)
+                result = false;
+
+            Nomer c = new Nomer();
+            bool expected = true;
+            bool actual = c.Fifth(result);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Amount_Digits()
+        {
+            bool result = true;
+            int counter = 0;
+            foreach (char d in nomer)
+            {
+                if (Char.IsDigit(d))
+                    counter++;
+            }
+
+            if (counter != 3)
+                result = false;
+
+            Nomer c = new Nomer();
+            bool expected = true;
+            bool actual = c.Sixth(result);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Vocabulary()
+        {
+            
+            int counter = 0;
+            string first = nomer.Substring(0, 1);
+            string third = nomer.Substring(4, 2);
+
+            for (int d = 0; d < first.Length; d++)
+            {
+                if (first[d] == 'А' || first[d] == 'В' || first[d] == 'Е' || first[d] == 'К' || first[d] == 'М' || first[d] == 'Н' || first[d] == 'О' || first[d] == 'Р' || first[d] == 'С' || first[d] == 'Т' || first[d] == 'У' || first[d] == 'Х')
+                {
+                    counter++;
+ 
+                }
+            }
+
+            for (int b = 0; b < third.Length; b++)
+
+            {
+                if (third[b] == 'А' || third[b] == 'В' || third[b] == 'Е' || third[b] == 'К' || third[b] == 'М' || third[b] == 'Н' || third[b] == 'О' || third[b] == 'Р' || third[b] == 'С' || third[b] == 'Т' || third[b] == 'У' || third[b] == 'Х')
+                {
+                    counter++;
+                    
+                }
+            }
+            
+            Nomer c = new Nomer();
+            int expected = 3;
+            int actual = c.Seventh(counter);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+    }
+}//проверка номеров автомобилей: 1)номер это ли; 2)существует ли регион

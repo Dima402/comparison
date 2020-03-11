@@ -1,0 +1,31 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using GosNumber;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GosNumber.Tests
+{
+    [TestClass()]
+    public class Existing
+    {
+        [TestMethod()]
+        public void Exist()
+        {
+            int r = 197;
+            bool result = false;
+            
+            if ((r >= 10 && r <= 99) || (r == 01) || (r == 02) || (r == 03) || (r == 04) || (r == 05) || (r == 06) || (r == 07) || (r == 08) || (r == 09) || (r == 102) || (r == 113) || (r == 116) || (r == 121) || (r == 123) || (r == 124) || (r == 125) || (r == 126) || (r == 134) || (r == 136) || (r == 138) || (r == 142) || (r == 150) || (r == 152) || (r == 154) || (r == 159) || (r == 161) || (r == 163) || (r == 164) || (r == 173) || (r == 174) || (r == 177) || (r == 178) || (r == 186) || (r == 190) || (r == 196) || (r == 197) || (r == 198) || (r == 199) || (r == 750) || (r == 716) || (r == 761) || (r == 763) || (r == 777) || (r == 799))
+            {
+                result = true;
+
+            }
+            Nomer c = new Nomer();
+            bool expected = true;
+            bool actual = c.Eighth(result);
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}

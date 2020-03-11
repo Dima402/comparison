@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GosNumber
+{
+    public class Nomer
+    {
+        
+        public bool First(bool result)
+        {
+            return result;
+        }
+
+        public bool Second(bool result)
+        {
+            return result;
+        }
+
+        public bool Third(bool result)
+        {
+            
+            return result;
+        }
+
+        public bool Fourth(bool result)
+        {
+
+            return result;
+        }
+
+        public bool Fifth(bool result)
+        {
+
+            return result;
+        }
+
+        public bool Sixth(bool result)
+        {
+
+            return result;
+        }
+
+        public int Seventh(int counter)
+        {
+
+            return counter;
+        }
+
+        public bool Eighth(bool result)
+        {
+
+            return result;
+        }
+
+    }
+}
